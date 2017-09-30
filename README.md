@@ -1,4 +1,5 @@
-= the-wrath-of-kotlin
+the-wrath-of-kotlin
+===================
 
 Random code with the Kotlin programming language
 
@@ -12,10 +13,12 @@ To run the test suite:
 
     ./gradlew test
 
-== Requirements
+Requirements
+------------
 
 * Java Development Kit (8.0+)
 
-== Licence
+Licence
+-------
 
 This code is open source software licensed under the Apache 2.0 License.
