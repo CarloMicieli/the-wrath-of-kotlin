@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *        http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.github.carlomicieli.data
 
 /**
@@ -28,9 +27,9 @@ package io.github.carlomicieli.data
  */
 sealed class Maybe<out T> {
     fun <U> map(f: (T) -> U): Maybe<U> {
-        return when(this) {
+        return when (this) {
             is Just -> Just(f(this.value))
-            else    -> None
+            else -> None
         }
     }
 
@@ -39,16 +38,16 @@ sealed class Maybe<out T> {
     }
 
     fun <U> flatMap(f: (T) -> Maybe<U>): Maybe<U> {
-        return when(this) {
+        return when (this) {
             is Just -> f(this.value)
-            else    -> None
+            else -> None
         }
     }
 
     fun get(): T? {
-        return when(this) {
+        return when (this) {
             is Just -> this.value
-            else    -> null
+            else -> null
         }
     }
 

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *        http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.github.carlomicieli.data
 
 /**
@@ -75,8 +74,8 @@ sealed class List<out T> {
     fun length(): Int = foldLeft(0) { len, _ -> len + 1 }
 
     fun mkString(): String {
-        return when(this) {
-            is Nil  -> "[]"
+        return when (this) {
+            is Nil -> "[]"
             is Cons -> {
                 val h = this.head.map { it.toString() }.get()!!
                 val elements = this.tail.foldLeft(h) { str, x -> "$str, $x" }
@@ -92,9 +91,9 @@ sealed class List<out T> {
      * @return a value
      */
     fun <R> foldRight(v: R, f: (T, R) -> R): R {
-        return when(this) {
+        return when (this) {
             is Cons -> f(this.head.get()!!, this.tail.foldRight(v, f))
-            is Nil  -> v
+            is Nil -> v
         }
     }
 
@@ -106,9 +105,9 @@ sealed class List<out T> {
      */
     fun <R> foldLeft(v: R, f: (R, T) -> R): R {
         tailrec fun go(xs: List<T>, acc: R): R {
-            return when(xs) {
+            return when (xs) {
                 is Cons -> go(xs.tail, f(acc, xs.head.get()!!))
-                is Nil  -> acc
+                is Nil -> acc
             }
         }
 

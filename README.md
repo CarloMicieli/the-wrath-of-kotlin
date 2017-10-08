@@ -4,7 +4,7 @@ the-wrath-of-kotlin
 Random code with the Kotlin programming language
 
     git clone https://github.com/CarloMicieli/the-wrath-of-kotlin
-    
+
 To generate the Kdoc (the Kotlin documentation):
 
     ./gradlew dokka

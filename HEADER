@@ -13,11 +13,3 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.carlomicieli
-
-/**
- * The identity function
- * @param x the argument
- * @return the argument, unchanged
- */
-fun <T> identity(x: T): T = x

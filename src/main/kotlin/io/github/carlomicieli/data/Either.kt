@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *        http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.github.carlomicieli.data
 
 /**
@@ -33,9 +32,9 @@ sealed class Either<out L, out R> {
      * @return the right value, null otherwise
      */
     fun get(): R? {
-        return when(this) {
+        return when (this) {
             is Right -> this.value
-            else     -> null
+            else -> null
         }
     }
 
@@ -111,7 +110,7 @@ sealed class Either<out L, out R> {
     }
 
     private fun <U> foldEither(left: (Left<L>) -> U, right: (Right<R>) -> U): U {
-        return when(this) {
+        return when (this) {
             is Right -> right(this)
             is Left -> left(this)
         }
@@ -136,7 +135,7 @@ private data class Right<out R>(val value: R) : Either<Nothing, R>() {
  * @return an Either value
  */
 fun <L, R, R2> Either<L, R>.andThen(f: (R) -> Either<L, R2>): Either<L, R2> {
-    return when(this) {
+    return when (this) {
         is Left -> this
         is Right -> f(this.value)
     }
