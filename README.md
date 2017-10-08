@@ -1,6 +1,8 @@
 the-wrath-of-kotlin
 ===================
 
+![Logo](kotlin.png)  
+
 Random code with the Kotlin programming language
 
     git clone https://github.com/CarloMicieli/the-wrath-of-kotlin
