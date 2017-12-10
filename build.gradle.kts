@@ -68,13 +68,12 @@ repositories {
 }
 
 dependencies {
-	compile("org.jetbrains.kotlin:kotlin-stdlib")
-	compile("org.jetbrains.kotlin:kotlin-reflect")
-
+    compile("org.jetbrains.kotlin:kotlin-stdlib")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
     testCompile("io.kotlintest:kotlintest:2.0.5")
 }
 
 task(name = "wrapper", type = Wrapper::class) {
-    gradleVersion = "4.4"
+    gradleVersion = "4.3.1"
     distributionUrl = "http://services.gradle.org/distributions/gradle-$gradleVersion-bin.zip"
 }
